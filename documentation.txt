@@ -1,0 +1,154 @@
+Deliverable for CIU Team: ID Information Extraction
+
+Objective: 
+Extract relevant information from a user-uploaded ID (front and back) to enhance
+the user experience and streamline the app’s onboarding process.
+
+Tasks:
+
+Data Collection: Gather diverse samples of IDs (both front and back) Also both carton ID
+and original. Ensure variety in formats, designs, and countries of origin.
+
+Preprocessing: Use techniques suitable for image preprocessing to enhance quality, 
+correct orientation, and remove noise.
+
+Feature Extraction: Utilize algorithms like Support Vector Machines, Random Forest, 
+or k-nearest neighbors to detect features such as faces, signatures, ID numbers, etc.
+
+Text Extraction: Implement Natural Language Processing (possibly using Naive Bayes or 
+Logistic Regression) for text extraction. This will help in gleaning information like
+nationality, surname, name, ID card number,  addresses, gender, and expiration dates.
+
+Integration: Incorporate the google-ml-kit package for Flutter. Ensure seamless
+integration into the app. Work in collaboration with the app's frontend and backend
+teams to ensure smooth data flow and storage.
+
+Testing: Perform rigorous testing with different ID samples. Ensure a high success rate
+ in information extraction with minimal errors.
+
+Documentation: Provide comprehensive documentation on the algorithms used, their
+accuracy rates, and integration steps. This will be crucial for the app development
+team and any future adjustments.
+
+
+Guidelines
+
+Efficiency: The extraction process should be as fast as possible to ensure users aren't
+kept waiting.
+
+Accuracy: Aim for the highest accuracy rates to minimize the need for manual corrections.
+
+Scalability: Design the solution keeping in mind the potential growth of the app user base.
+
+Integration: Collaborate closely with the app developers to ensure easy and efficient 
+integration of your ML solution.
+
+Deadline: 
+October 15th, 2023
+
+
+
+
+From 02/10 to 05/10: Feature Extraction
+
+
+Utilize algorithms like Support Vector Machines, Random Forest, 
+or k-nearest neighbors to detect features such as faces, signatures,
+ID numbers, etc.
+
+
+
+Extracting features like text, numbers, faces, or signatures from images using machine
+learning algorithms typically involves a combination of image preprocessing techniques
+and the application of specific models for each task. Here's a general approach using
+machine learning algorithms like Support Vector Machines (SVM), Random Forest, or 
+k-Nearest Neighbors (k-NN):
+
+1. **Image Preprocessing:**
+   - Convert the input image to an appropriate format, such as grayscale or RGB.
+   - Apply image enhancement techniques like contrast adjustment, denoising, or edge 
+    detection to improve feature visibility if necessary.
+   - Segment the image to isolate the regions of interest (text, numbers, faces, signatures)
+    from the background. Techniques like thresholding, edge detection, or connected 
+    component analysis can be employed for segmentation.
+
+2. **Feature Extraction:**
+   - For each specific feature type (text, numbers, faces, signatures), apply relevant
+     feature extraction techniques. Here are some examples:
+
+     - Text Extraction: Use Optical Character Recognition (OCR) techniques to extract text
+       from the segmented regions. OCR algorithms like Tesseract, or deep learning-based 
+       models like Convolutional Recurrent Neural Networks (CRNN), can be employed.
+
+     - Number Extraction: Apply digit recognition techniques to recognize and extract 
+       numbers from the segmented regions. Popular approaches include template matching,
+       contour-based methods, or deep learning models like Convolutional Neural Networks
+       (CNN).
+
+     - Face Extraction: Utilize face detection algorithms like Haar cascades, Histogram
+       of Oriented Gradients (HOG), or deep learning-based models like Single Shot 
+       Multibox Detector (SSD) or MTCNN to detect and extract faces from the segmented 
+       regions.
+
+     - Signature Extraction: Employ techniques like edge detection, contour analysis, or
+      deep learning models to detect and extract signatures from the segmented regions.
+
+3. **Training and Classification:**
+   - Prepare a labeled dataset containing representative samples of the feature types you
+    want to extract (e.g., text, numbers, faces, signatures).
+   - Split the dataset into training and testing sets.
+   - Train a machine learning model using the chosen algorithm (SVM, Random Forest, k-NN)
+    on the training data, using the extracted features as input and the corresponding 
+    labels as target variables.
+   - Evaluate the trained model's performance on the testing data to assess its accuracy,
+    precision, recall, or other relevant metrics.
+
+4. **Inference and Prediction:**
+   - Apply the trained model on new, unseen images to predict the presence or location of
+    the desired features.
+   - Use the model's predictions to extract the specific features of interest from the 
+    input image.
+
+It's important to note that the specific implementation details and model architectures 
+may vary depending on the feature extraction task and the available datasets. 
+The mentioned algorithms (SVM, Random Forest, k-NN) are just examples, and other
+machine learning models, such as deep learning architectures, can be used depending 
+on the complexity and scale of the problem.
+
+Additionally, it's worth considering that extracting multiple types of features from
+a single image may require a combination of specialized models or a multi-task learning
+approach, where a single model is trained to handle multiple feature extraction tasks
+simultaneously.
+
+
+Our task is Feature Extraction
+
+2. **Feature Extraction:**
+   - For each specific feature type (text, numbers, faces, signatures), apply relevant
+     feature extraction techniques. Here are some examples:
+
+     - Text Extraction: Use Optical Character Recognition (OCR) techniques to extract text
+       from the segmented regions. OCR algorithms like Tesseract, or deep learning-based 
+       models like Convolutional Recurrent Neural Networks (CRNN), can be employed.
+
+     - Number Extraction: Apply digit recognition techniques to recognize and extract 
+       numbers from the segmented regions. Popular approaches include template matching,
+       contour-based methods, or deep learning models like Convolutional Neural Networks
+       (CNN).
+
+     - Face Extraction: Utilize face detection algorithms like Haar cascades, Histogram
+       of Oriented Gradients (HOG), or deep learning-based models like Single Shot 
+       Multibox Detector (SSD) or MTCNN to detect and extract faces from the segmented 
+       regions.
+
+     - Signature Extraction: Employ techniques like edge detection, contour analysis, or
+      deep learning models to detect and extract signatures from the segmented regions.
+
+
+
+We will take an ID card image and extract all the text then use regex to recognise name,
+surname, age, date 
+
+To research, we are going to build the following:
+
+- Text Detection and Extraction using OpenCV and OCR (geeks for geeks)
